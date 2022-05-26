@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Header from './Header'
 
 const Add = () => {
     var [name,setname]=useState("")
@@ -11,7 +12,7 @@ const Add = () => {
     }
   return (
     <div>
-
+<Header/>
 <div className="container">
     <div className="row">
             <div className="row g-3">
