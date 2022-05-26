@@ -4,12 +4,18 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Add from './Components/Add';
 import View from './Components/View';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+
 
 function App() {
   return (
     <div>
-      <Add/>
-      <View/>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" exact element={<Add/>}/>
+      <Route path="/view" exact element={<View/>}/>
+    </Routes>
+    </BrowserRouter>
     </div>
   );
 }
