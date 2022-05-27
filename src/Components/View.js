@@ -1,21 +1,18 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import Header from './Header'
 
 const View = () => {
-    var viewlist=[
-        {
-            "name":"anoop","admin":"112","cgpa":"7.7"
-        },
-        {
-            "name":"manju","admin":"113","cgpa":"7.8"
-        },
-        {
-            "name":"lachu","admin":"114","cgpa":"7.9"
-        },
-        {
-            "name":"radha","admin":"115","cgpa":"7.5"
-        }
-    ]
+    var  [viewlist,setviewlist]=useState([])
+
+   
+axios.get("http://localhost:5000/api/view").then(
+    (response)=>{
+
+        console.log(response.data)
+        setviewlist(response.data.data) 
+      
+    })
   return (
     <div>
         <Header/>
@@ -24,8 +21,8 @@ const View = () => {
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row">
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <table class="table">
-  <thead>
+                <table class="table ">
+  <thead className="table table-info">
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Admin no</th>

@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import Header from './Header'
 
@@ -8,6 +9,20 @@ const Add = () => {
     const subdata=()=>{
         const data={"name":name,"admin":admin,"cgpa":cgpa}
         console.log(data)
+        axios.post("http://localhost:5000/api/markapp",data).then(
+            (response)=>{
+                console.log(response.data)
+                if(response.data.status=="success")
+                {
+                    alert("successfully added")
+
+                }
+                else 
+                {
+                    alert("failed to added")
+                }
+            }
+        )
 
     }
   return (
