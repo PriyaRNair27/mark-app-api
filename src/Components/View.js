@@ -5,7 +5,6 @@ import Header from './Header'
 const View = () => {
     var  [viewlist,setviewlist]=useState([])
 
-   
 axios.get("http://localhost:5000/api/view").then(
     (response)=>{
 
